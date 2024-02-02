@@ -1,9 +1,6 @@
 import * as THREE from 'three';
 
-const geometry = new THREE.BoxGeometry();
-//redondear los bordes
-geometry.computeVertexNormals();
-
+const cube = new THREE.BoxGeometry();
 const textureLoader = new THREE.TextureLoader();
 
 // Cargar las tres imágenes
@@ -24,9 +21,11 @@ const material = new THREE.MeshStandardMaterial({
     side: THREE.DoubleSide // Doble cara
 });
 
-//redondear los bord
 
-const cube = new THREE.Mesh(geometry, material);
+
+
+// Crear el cubo con la geometría y el material
+const mycube = new THREE.Mesh(cube, material);
 
 // Exportar el cubo como una variable
-export const myCube = cube;
+export const myCube = mycube;
