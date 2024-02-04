@@ -4,25 +4,26 @@ const cube = new THREE.BoxGeometry();
 const textureLoader = new THREE.TextureLoader();
 
 // Cargar las tres imágenes
-const texture = textureLoader.load('src/textures/glass/Glass_Blocks_001_glass.jpg');
+const texture = textureLoader.load('src/textures/glass/glass_texture.jpg');
 const roughnessMap = textureLoader.load('src/textures/glass/Glass_Blocks_001_roughness.jpg');
-const normalMap = textureLoader.load('src/textures/glass/Glass_Blocks_001_normal.jpg');
+const normalMap = textureLoader.load('src/textures/glass/glass.jpg');
 
 // Crear el material con las tres texturas
 const material = new THREE.MeshStandardMaterial({
     map: texture,
-    roughnessMap: roughnessMap,
     normalMap: normalMap,
-    roughness: 1, // Es un material rugoso
-    metalness: 0.5, // No metálico
+    roughnessMap: roughnessMap,
+    roughness: .5, // Es un material rugoso
+    metalness: .7, // No metálico
     transparent: true, // Habilitar transparencia
-    opacity: .6, // Ajustar opacidad según sea necesario
-    color: 0x00ff00, // Color de la luz,
-    side: THREE.DoubleSide // Doble cara
+    opacity: .8, // Ajustar opacidad según sea necesario
+    color: 0x00FF00,
+    side: THREE.DoubleSide, // Doble cara
+
 });
 
-
-
+// Hacer mas pequeño el cubo
+cube.scale(0.7, 0.7, 0.7);
 
 // Crear el cubo con la geometría y el material
 const mycube = new THREE.Mesh(cube, material);
