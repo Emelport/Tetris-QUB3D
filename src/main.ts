@@ -96,7 +96,7 @@ const moveCube = (cube: THREE.Mesh, direction: string) => {
   }
 }
 
-//Funcion para generar un cubo en la cuadricula
-const generateCube = () => {
+// //Funcion para generar un cubo en la cuadricula
+// const generateCube = () => {
 
-}
+// }
